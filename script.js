@@ -19,23 +19,14 @@ $('.boxContainer').on('click','.deleteButton', deleteDiv);
     console.log('createBox activated');
     var $div = $('<div class="box">' + '<button class="deleteButton">x</button>' + '</div>');
     $('.boxContainer').append($div);
-    var random = randomNumber(1,5);
+    var random = randomNumber(0,4);
     console.log(random);
 
     randomColor($div)
     function randomColor(newBox){
-
-      if (random ==1){
-        $(newBox).css('background-color','blue');
-      } else if(random ==2){
-        $(newBox).css('background-color','red');
-      } else if(random == 3){
-          $(newBox).css('background-color','yellow');
-      } else if (random ==4){
-          $(newBox).css('background-color','orange');
-      } else{
-          $(newBox).css('background-color','violet');
-      }
+      var colors = ['blue', 'red','orange','green','purple'];
+      $(newBox).css('background-color',colors[random]);
+      console.log(colors[random]);
     }
 
 
